@@ -36,6 +36,9 @@ RUN pip install gdown && \
     mkdir /etc/udev/rules.d && \
     dpkg -i ids-peak-linux-x86-2.1.0.0-64.deb
 
+RUN pip install "/usr/local/share/ids/bindings/python/wheel/ids_peak_ipl-1.4.0.0-cp310-cp310-linux_x86_64.whl" && \
+    pip install "/usr/local/share/ids/bindings/python/wheel/ids_peak-1.4.2.2-cp310-cp310-linux_x86_64.whl"
+
 # Install DropFreezingDetection and csDAQ software in /opt folder of container
 RUN cd /opt && \
     git clone https://github.com/CIF-Cold-Stage/csDAQ.git && \
