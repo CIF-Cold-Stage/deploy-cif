@@ -116,8 +116,9 @@ logout
 6. On thee host copy these files to the ```/etc/udev/rules.d/``` directory and reload the rules. This will ensure that the user has access to the serial and camera devices. 
 
 ```bash 
-[user@host ~]$ sudo mv *.rules /etc/udev/rules.d/
-[user@host ~]$ sudo udevadm control --reload-rules && udevadm trigger
+[user@host ~]$ sudo -s
+[root@host ~]$ mv *.rules /etc/udev/rules.d/
+[root@host ~]$ udevadm control --reload-rules && udevadm trigger
 ```
 
 7. Reboot the machine.
@@ -133,6 +134,9 @@ logout
 ```
 
 3. Start ids_cockpit software. Check that you are able to open the camera and display an image stream.
+```bash
+[user@cif:~]$ ids_peak_cockpit
+```
 
 ## 5. Test Serial Port
 
